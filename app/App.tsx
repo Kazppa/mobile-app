@@ -12,24 +12,37 @@ import React from 'react';
 
 import Login from './views/Login';
 import Home from './views/home';
+import AsyncStorage from '@react-native-community/async-storage';
+import Loading from './views/Loading';
 
 declare const global: {HermesInternal: null | {}};
 
 export default class App extends React.Component {
   state = {
-    isConnected: false,
+    user: null,
+    isConnected: null,
   };
 
+  async componentDidMount() {
+    const isConnected: boolean =
+      (await AsyncStorage.getItem('@connected')) === '1';
+    this.setState({isConnected});
+  }
+
   loginUser = () => {
+    AsyncStorage.setItem('@connected', '1');
     this.setState({isConnected: true});
   };
 
   logoutUser = () => {
+    AsyncStorage.setItem('@connected', '0');
     this.setState({isConnected: false});
   };
 
   render() {
-    if (this.state.isConnected) {
+    if (this.state.isConnected == null) {
+      return <Loading />;
+    } else if (this.state.isConnected) {
       return <Home logout={this.logoutUser} />;
     } else {
       return <Login login={this.loginUser} />;
