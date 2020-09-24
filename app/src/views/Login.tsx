@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, View, Text, Button, TextInput} from 'react-native';
-
-declare const global: {HermesInternal: null | {}};
+import {StyleSheet, View, Text} from 'react-native';
+import R from 'res/R';
+import Logo from '../components/Logo';
+import Button from '../components/Button';
 
 interface LoginProps {
   login: () => void;
@@ -17,10 +18,9 @@ export default class Login extends React.Component<LoginProps> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.input_text}>Authentification</Text>
-        <TextInput style={styles.input} />
-        <TextInput style={styles.input} />
-        <Button title="Connexion" onPress={this.onLogin} />
+        <Logo size={100} />
+        <Text style={styles.text}>{R.i18n.t('login.welcome')}</Text>
+        <Button title={R.i18n.t('login.button')} onPress={this.onLogin} />
       </View>
     );
   }
@@ -31,7 +31,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#00FFFF',
+    backgroundColor: R.colors.blue,
+  },
+  text: {
+    color: 'white',
+    fontSize: 18,
+    marginBottom: 10,
+    fontWeight: 'bold',
   },
   input: {
     width: 200,
@@ -40,6 +46,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     marginBottom: 10,
+    color: 'white',
   },
   input_text: {
     width: 200,
@@ -48,7 +55,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     borderWidth: 1,
-    borderColor: 'black',
+    color: 'white',
     marginBottom: 10,
   },
 });

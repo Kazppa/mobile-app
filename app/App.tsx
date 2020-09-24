@@ -10,10 +10,10 @@
 
 import React from 'react';
 
-import Login from './views/Login';
-import Home from './views/home';
+import Login from './src/views/Login';
+import Home from './src/views/Home';
 import AsyncStorage from '@react-native-community/async-storage';
-import Loading from './views/Loading';
+import Loading from './src/views/Loading';
 
 declare const global: {HermesInternal: null | {}};
 
