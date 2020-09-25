@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "331412860539",
+    "firebase_url": "https://dev-mobile-mathieu.firebaseio.com",
+    "project_id": "dev-mobile-mathieu",
+    "storage_bucket": "dev-mobile-mathieu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331412860539:android:6fbcc4c92a5042b30cbcde",
+        "android_client_info": {
+          "package_name": "com.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331412860539-c3n1dsojkmacum4npp276mvaktfs2hie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7zHhD3TQYj4XZyTxU2gZuiSCQKviEKJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331412860539-c3n1dsojkmacum4npp276mvaktfs2hie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

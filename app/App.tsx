@@ -15,8 +15,6 @@ import Home from './src/views/Home';
 import AsyncStorage from '@react-native-community/async-storage';
 import Loading from './src/views/Loading';
 
-declare const global: {HermesInternal: null | {}};
-
 export default class App extends React.Component {
   state = {
     user: null,
